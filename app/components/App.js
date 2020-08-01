@@ -16,6 +16,8 @@ import ConditionListPage from "../pages/ConditionListPage";
 import LoginPage from "../pages/account/LoginPage";
 import RegisterPage from "../pages/account/RegisterPage";
 
+const { hot } = require("react-hot-loader/root");
+
 const App = () => {
   return (
     <div id="outer-container">
@@ -38,4 +40,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default hot(App);

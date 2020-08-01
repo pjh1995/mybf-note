@@ -1,16 +1,19 @@
 {
   "name": "my-bf-note",
   "version": "0.1.0",
-  "private": true,
+  "main": "index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
+    "core-js": "3",
     "cross-env": "^7.0.2",
     "immer": "^7.0.7",
+    "next-images": "^1.4.1",
     "node-sass": "^4.14.1",
+    "path-to-regexp": "^2.4.0",
     "react": "^16.13.1",
     "react-burger-menu": "^2.7.0",
     "react-dom": "^16.13.1",
@@ -25,8 +28,8 @@
     "styled-components": "^5.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "webpack-dev-server --hot",
+    "dev": "webpack",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -45,5 +48,31 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.0",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/polyfill": "^7.10.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^4.1.1",
+    "dotenv-webpack": "^2.0.0",
+    "file-loader": "^6.0.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "react-hot-loader": "^4.12.21",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "repository": "https://github.com/yunos82/mybf-note.git",
+  "author": "Park Gyu Ae <yunos0502@gmail.com>",
+  "license": "MIT"
 }

@@ -1,0 +1,300 @@
+/*! 빌드 날짜: 2020. 8. 2. 오전 1:09:42 */
+@import url(https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Sunflower:500,700);
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Raleway", "Apple SD Gothic Neo", Roboto, "Noto Sans KR", NanumGothic, "Malgun Gothic", sans-serif;
+  color: #555;
+  line-height: 1.2;
+  word-wrap: break-word;
+  height: 100%;
+}
+
+body {
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+}
+
+#app {
+  height: 100%;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+div,
+span,
+article,
+section,
+header,
+footer,
+aside,
+p,
+ul,
+li,
+fieldset,
+legend,
+label,
+a,
+nav,
+form {
+  box-sizing: border-box;
+  /* content-box */
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+
+a {
+  display: inline-block;
+}
+
+button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+a {
+  color: #4e4a46;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  color: #1abc9c;
+}
+
+main {
+  height: 100vh;
+  padding: 0 2rem;
+  text-align: center;
+  background: #fff;
+  overflow: auto;
+}
+
+header {
+  height: 60px;
+}
+header h1 {
+  line-height: 55px;
+  margin-top: 5px;
+  font-size: 1.2rem;
+  font-family: "Sunflower";
+  font-weight: 700;
+}
+header h1 span {
+  color: #f39c12;
+  margin: 0 2px;
+}
+header h1 svg {
+  transform: translateY(5px);
+}
+
+@media screen and (max-width: 40em) {
+  main {
+    font-size: 80%;
+  }
+}
+.bm-burger-button {
+  position: fixed;
+  width: 25px;
+  height: 15px;
+  left: 36px;
+  top: 22px;
+}
+.bm-burger-button .bm-burger-bars {
+  background: #f39c12;
+}
+
+.bm-menu-wrap .bm-menu {
+  background: #fff;
+  padding: 2.5em 1.5em 0;
+  font-size: 1rem;
+}
+.bm-menu-wrap .bm-menu a {
+  color: #b8b7ad;
+}
+.bm-menu-wrap .bm-item-list a {
+  padding: 0.8em;
+}
+.bm-menu-wrap .bm-item-list a:hover, .bm-menu-wrap .bm-item-list a:focus {
+  color: #1abc9c;
+  outline: none;
+}
+.bm-menu-wrap .bm-item-list a span {
+  margin-left: 10px;
+  font-weight: 700;
+}
+.bm-menu-wrap .bm-cross {
+  background: #f39c12;
+}
+
+#weatherWrap {
+  width: 40px;
+  height: auto;
+  position: absolute;
+  right: 50px;
+  top: 18px;
+  display: flex;
+}
+#weatherWrap img {
+  width: 2rem;
+  height: 2rem;
+}
+#weatherWrap p {
+  font-size: 0.5rem;
+  padding-top: 0.1rem;
+}
+
+#SlideImageTag {
+  padding: 1rem 0;
+  width: 100%;
+}
+#SlideImageTag ul {
+  display: flex;
+  width: 100%;
+}
+#SlideImageTag ul li {
+  border: 2px solid #ececec;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  width: 12%;
+  position: relative;
+  height: 0;
+  padding-top: 10.726%;
+  overflow: hidden;
+  cursor: pointer;
+}
+#SlideImageTag ul li img,
+#SlideImageTag ul li span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#SlideImageTag ul li:first-child, #SlideImageTag ul li:last-child {
+  border-color: #f39c12;
+  background: #f39c12;
+  color: #fff;
+}
+#SlideImageTag ul li:first-child span, #SlideImageTag ul li:last-child span {
+  font-size: 15px;
+  font-weight: 700;
+}

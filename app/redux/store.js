@@ -1,6 +1,6 @@
-import { createStore, applyMiddleware, compose } from "redux";
+import { createStore, applyMiddleware, compose } from "redux/redux";
 import reducers from "./reducers";
-import { composeWithDevTools } from "redux-devtools-extension";
+import { composeWithDevTools } from "redux/redux-devtools-extension";
 
 //리액트 스토어를 생성하고 구성해서 스토어를 반환하는 함수
 export function configureStore() {
