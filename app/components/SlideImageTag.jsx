@@ -1,6 +1,6 @@
 import React from "react";
 import { FiPlus } from "react-icons/fi";
-// import test from "../images/test.jpeg";
+import test from "../images/test.jpeg";
 
 const SlideImageTag = () => {
   return (
@@ -9,24 +9,24 @@ const SlideImageTag = () => {
         <li>
           <span>ALL</span>
         </li>
-        {/* <li>
+        <li>
           <img src={test} alt="딸기" />
-        </li> */}
-        {/* <li>
-          <img src="images/test.jpeg" alt="딸기" />
-        </li> */}
-        {/* <li>
-          <img src="images/test.jpeg" alt="딸기" />
         </li>
         <li>
-          <img src="images/test.jpeg" alt="딸기" />
+          <img src={test} alt="딸기" />
         </li>
         <li>
-          <img src="images/test.jpeg" alt="딸기" />
+          <img src={test} alt="딸기" />
         </li>
         <li>
-          <img src="images/test.jpeg" alt="딸기" />
-        </li> */}
+          <img src={test} alt="딸기" />
+        </li>
+        <li>
+          <img src={test} alt="딸기" />
+        </li>
+        <li>
+          <img src={test} alt="딸기" />
+        </li>
         <li>
           <span>
             <FiPlus />

@@ -57,13 +57,10 @@ module.exports = {
         use: [
           {
             loader: "file-loader",
-            query: {
-              name: "/images/[name].[ext]",
+            options: {
+              publicPath: "/",
+              name: "images/[name].[ext]",
             },
-            // options: {
-            //   // publicPath: "/images/",
-            //   name: "images/[name].[ext]",
-            // },
           },
         ],
       },
@@ -84,7 +81,7 @@ module.exports = {
       filename: "index.html",
       template: "./index.html",
       favicon: "./app/images/favicon.ico",
-      hash: true,
+      // hash: true,
     }),
     new Dotenv(),
     // new MiniCssExtractPlugin({ filename: "styles/app.css" }),
@@ -95,5 +92,5 @@ module.exports = {
     compress: true,
     port: 8080,
   },
-  watch: true,
+  // watch: true,
 };
