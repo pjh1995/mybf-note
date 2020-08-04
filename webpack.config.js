@@ -82,6 +82,7 @@ module.exports = {
       template: "./index.html",
       favicon: "./app/images/favicon.ico",
       // hash: true,
+      hot: true,
     }),
     new Dotenv(),
     // new MiniCssExtractPlugin({ filename: "styles/app.css" }),
@@ -90,7 +91,9 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     compress: true,
+    host: "192.168.219.104",
     port: 8080,
+    disableHostCheck: true,
   },
   // watch: true,
 };

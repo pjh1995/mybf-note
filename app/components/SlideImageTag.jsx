@@ -24,9 +24,15 @@ const SlideImageTag = () => {
         <li>
           <img src={test} alt="딸기" />
         </li>
+        {/* <li>
+          <img src={test} alt="딸기" />
+        </li>
         <li>
           <img src={test} alt="딸기" />
         </li>
+        <li>
+          <img src={test} alt="딸기" />
+        </li> */}
         <li>
           <span>
             <FiPlus />
