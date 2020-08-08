@@ -1,105 +1,91 @@
-import React from "react";
-import moment, { Moment as MomentTypes } from "moment";
-import "./Calendar.scss";
-import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import React, { useState, useEffect } from 'react';
+import moment, { Moment as MomentTypes } from 'moment';
+import 'moment/locale/ko';
+import './Calendar.scss';
+import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import { weekdaysEn } from './constant';
+
+moment.locale('ko');
 
 const Calendar = () => {
-  function generate() {
-    moment.lang("ko", {
-      months: [
-        "1월",
-        "2월",
-        "3월",
-        "4월",
-        "5월",
-        "6월",
-        "7월",
-        "8월",
-        "9월",
-        "10월",
-        "11월",
-        "12월",
-      ],
-      weekdays: [
-        "일요일",
-        "월요일",
-        "화요일",
-        "수요일",
-        "목요일",
-        "금요일",
-        "토요일",
-      ],
-      weekdaysShort: ["일", "월", "화", "수", "목", "금", "토"],
-    });
-
     const today = moment();
-    const startWeek = today.clone().startOf("month").week();
-    const endWeek =
-      today.clone().endOf("month").week() === 1
-        ? 53
-        : today.clone().endOf("month").week();
-    let calendar = [];
-    for (let week = startWeek; week <= endWeek; week++) {
-      calendar.push(
-        <ul className="weeks" key={week}>
-          {Array(7)
-            .fill(0)
-            .map((n, i) => {
-              let current = today
-                .clone()
-                .week(week)
-                .startOf("week")
-                .add(n + i, "day");
-              let isToday =
-                today.format("YYYYMMDD") === current.format("YYYYMMDD")
-                  ? "today"
-                  : "";
-              let isAnotherMonth =
-                current.format("MM") === today.format("MM")
-                  ? ""
-                  : "another-month";
-              return (
-                <li className={isAnotherMonth} key={i}>
-                  <span className={isToday}>{current.format("D")}</span>
-                </li>
-              );
-            })}
-        </ul>
-      );
+    const [targetDate, setTargetDate] = useState(today);
+
+    function setDay(current) {
+        const isToday =
+            today.format('YYYYMMDD') === current.format('YYYYMMDD')
+                ? 'today'
+                : '';
+        const isAnotherMonth =
+            current.format('MM') === targetDate.format('MM')
+                ? ''
+                : 'another-month';
+        const day = current.format('D');
+        return (
+            <li className={isAnotherMonth} key={day}>
+                <span className={isToday}>{day}</span>
+            </li>
+        );
     }
-    return calendar;
-  }
 
-  return (
-    <div className="calendar">
-      <div className="calendar-head">
-        <button>
-          <MdChevronLeft />
-        </button>
-        <h1>
-          {moment().format("YYYY")}년 {moment().format("MMMM")}
-        </h1>
-        <button>
-          <MdChevronRight />
-        </button>
-      </div>
-      <div className="calendar-body">
-        <div className="body-title">
-          <ul className="weeks">
-            <li>SUN</li>
-            <li>MON</li>
-            <li>TUE</li>
-            <li>WED</li>
-            <li>THU</li>
-            <li>FRI</li>
-            <li>SAT</li>
-          </ul>
+    function setWeekRow(week) {
+        let newWeeks = Array(7).fill(0);
+        return (
+            <ul className="weeks" key={week}>
+                {newWeeks.map((n, i) => {
+                    const current = targetDate
+                        .clone()()
+                        .startOf('week')
+                        .week(week)
+                        .add(n + i, 'day');
+                    return setDay(current);
+                })}
+            </ul>
+        );
+    }
+
+    function setCalendar() {
+        const startWeek = targetDate.clone().startOf('month').week();
+        let endWeek = targetDate.clone().endOf('month').week();
+        if (endWeek === 1) endWeek = 53;
+        let calendar = [];
+
+        for (let week = startWeek; week <= endWeek; week++) {
+            calendar.push(setWeekRow(week));
+        }
+        return calendar;
+    }
+
+    function handleClick(addMonth) {
+        setTargetDate(targetDate.clone().add(addMonth, 'M'));
+    }
+
+    return (
+        <div className="calendar">
+            <div className="calendar-head">
+                <button onClick={() => handleClick(-1)}>
+                    <MdChevronLeft />
+                </button>
+                <h1>
+                    {targetDate.format('YYYY')}년 {targetDate.format('MMMM')}
+                </h1>
+                <button onClick={() => handleClick(1)}>
+                    <MdChevronRight />
+                </button>
+            </div>
+            <div className="calendar-body">
+                <div className="body-title">
+                    <ul className="weeks">
+                        {weekdaysEn.map((week, index) => (
+                            <li key={index}>{week}</li>
+                        ))}
+                    </ul>
+                </div>
+
+                <div className="weeks-days">{setCalendar()}</div>
+            </div>
         </div>
-
-        <div className="weeks-days">{generate()}</div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Calendar;

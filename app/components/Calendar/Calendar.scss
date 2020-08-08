@@ -1,118 +1,116 @@
-@import url("https://fonts.googleapis.com/css?family=Sunflower:500,700");
-
+@import url('https://fonts.googleapis.com/css?family=Sunflower:500,700');
 .calendar {
-  background: #2b4450;
-  border-radius: 4px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  height: auto;
-  perspective: 1000;
-  transition: 0.9s;
-  transform-style: preserve-3d;
-  width: 100%;
-  font-family: "Sunflower";
-  color: #dfebed;
-  margin: 1rem 0;
-  user-select: none;
+    background: #2b4450;
+    border-radius: 4px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    height: auto;
+    perspective: 1000;
+    transition: 0.9s;
+    transform-style: preserve-3d;
+    width: 100%;
+    font-family: 'Sunflower';
+    color: #dfebed;
+    margin: 1rem 0;
+    user-select: none;
 
-  &-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 3rem;
-    border-bottom: 1px solid rgba(73, 114, 133, 0.6);
+    &-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 3rem;
+        border-bottom: 1px solid rgba(73, 114, 133, 0.6);
 
-    h1 {
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-
-      &:hover {
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 1.1rem;
-      }
-      &:active {
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 1.1rem;
-      }
-    }
-    button {
-      outline: none;
-
-      &:hover {
-        background: rgba(73, 114, 133, 0.5);
-      }
-      &:active {
-        background: rgba(73, 114, 133, 0.5);
-      }
-
-      svg {
-        color: #dfebed;
-        width: 1.5rem;
-        height: 1.5rem;
-      }
-    }
-  }
-  &-body {
-    font-size: 0.9rem;
-    font-weight: 500;
-    padding: 1rem 0;
-
-    .body-title {
-      .weeks {
-        li:first-child {
-          color: #f39c12;
-        }
-        li:last-child {
-          color: #1abc9c;
-        }
-      }
-    }
-
-    .weeks {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      height: 3rem;
-
-      li {
-        width: calc(100% / 7);
-
-        &.another-month {
-          color: rgba(145, 145, 145, 0.5);
-        }
-
-        span {
-          padding: 10px;
-
-          &.today {
-            background: #f78536;
-            border-radius: 50%;
-            width: 37px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-          }
-          &.event {
-            position: relative;
-
-            &:after {
-              content: "•";
-              color: #f78536;
-              font-size: 1.4em;
-              position: absolute;
-              right: -4px;
-              top: -4px;
-            }
-          }
-          &:not(.another-month):hover {
-            cursor: pointer;
-            font-weight: 700;
+        h1 {
             font-size: 1rem;
-          }
+            font-weight: 700;
+            cursor: pointer;
+
+            &:hover {
+                color: rgba(255, 255, 255, 0.8);
+                font-size: 1.1rem;
+            }
+            &:active {
+                color: rgba(255, 255, 255, 0.8);
+                font-size: 1.1rem;
+            }
         }
-      }
+        button {
+            outline: none;
+            &:hover {
+                background: rgba(73, 114, 133, 0.5);
+            }
+            &:active {
+                background: rgba(73, 114, 133, 0.5);
+            }
+
+            svg {
+                color: #dfebed;
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
     }
-  }
+    &-body {
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 1rem 0;
+
+        .body-title {
+            .weeks {
+                li:first-child {
+                    color: #f39c12;
+                }
+                li:last-child {
+                    color: #1abc9c;
+                }
+            }
+        }
+
+        .weeks {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 3rem;
+
+            li {
+                width: calc(100% / 7);
+
+                &.another-month {
+                    color: rgba(145, 145, 145, 0.5);
+                }
+
+                span {
+                    padding: 10px;
+
+                    &.today {
+                        background: #f78536;
+                        border-radius: 50%;
+                        width: 37px;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    &.event {
+                        position: relative;
+
+                        &:after {
+                            content: '•';
+                            color: #f78536;
+                            font-size: 1.4em;
+                            position: absolute;
+                            right: -4px;
+                            top: -4px;
+                        }
+                    }
+                    &:not(.another-month):hover {
+                        cursor: pointer;
+                        font-weight: 700;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
 }
 
 // const CalendarBlock = styled.div`
